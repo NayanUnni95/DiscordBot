@@ -15,12 +15,9 @@ bot = commands.Bot(
 @bot.event
 async def on_ready():
     print("Bot is ready to use!")
+    await bot.load_extension("cogs.common")
+    await bot.load_extension("cogs.level")
     await bot.tree.sync()
-
-
-@bot.tree.command(name="ping", description="Check is the bot online")
-async def ping(interaction):
-    await interaction.response.send_message("Pong!", ephemeral=True, delete_after=5)
 
 
 bot.run(token)
