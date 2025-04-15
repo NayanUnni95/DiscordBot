@@ -17,6 +17,7 @@ async def on_ready():
     print("Bot is ready to use!")
     await bot.load_extension("cogs.common")
     await bot.load_extension("cogs.level")
+    await bot.load_extension("cogs.ui")
     await bot.tree.sync()
 
 
